@@ -1,4 +1,5 @@
 Official site: http://mobile.ant.design/
 
-use Webpack react ant-design-mobile babel 
+use Webpack React Ant-design-mobile Babel 
+
 hot loader
