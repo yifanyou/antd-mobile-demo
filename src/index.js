@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import 'antd-mobile/lib/button/style';
-import Button from 'antd-mobile/lib/button';
+import { Button } from 'antd-mobile';
 
 ReactDOM.render(
   <Button>Start</Button>,

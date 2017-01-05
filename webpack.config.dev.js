@@ -7,7 +7,9 @@ var webpack = require('webpack');
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
-        './src/index'
+      'webpack-dev-server/client?http://0.0.0.0:4000',
+      'webpack/hot/only-dev-server',
+      './src/index'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -18,7 +20,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
+            'process.env.NODE_ENV': 'development'
         })
     ],
     resolve: {
@@ -31,14 +33,14 @@ module.exports = {
                 test: /\.js$/,
                 loaders: ['react-hot', 'babel'],
                 exclude: /node_modules/,
-                include: __dirname
+                include: path.join(__dirname, 'src')
             },
             {
                 test: /\.css$/,
                 loaders: [
                     'style', 'css'
                 ],
-                include: __dirname
+                include: path.join(__dirname, 'src')
             },
             {
                 test: /\.less?$/,
@@ -47,10 +49,10 @@ module.exports = {
                     'css-loader',
                     'less-loader?{"sourceMap":true}'
                 ],
-                include: __dirname
+                include: path.join(__dirname, 'src')
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/,
+                test: /\.(jpeg|png|gif|svg)$/,
                 loader: 'url',
                 query: {limit: 10240}
             }
