@@ -40,7 +40,7 @@ module.exports = {
                 loaders: [
                     'style', 'css'
                 ],
-                include: path.join(__dirname, 'src')
+                include: __dirname
             },
             {
                 test: /\.less?$/,
@@ -49,7 +49,7 @@ module.exports = {
                     'css-loader',
                     'less-loader?{"sourceMap":true}'
                 ],
-                include: path.join(__dirname, 'src')
+                include: __dirname
             },
             {
                 test: /\.(jpeg|png|gif|svg)$/,
